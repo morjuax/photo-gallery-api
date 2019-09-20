@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'development') {
+    require('dotenv').config();
+}
+
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
@@ -7,7 +11,7 @@ const app = express();
 import indexRoutes from './routes/index';
 
 // settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 
 // middlewares
 app.use(morgan('dev'));
