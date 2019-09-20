@@ -1,8 +1,7 @@
 import {connect} from 'mongoose';
-let mongodb_uri: string = (process.env.MONGODB_URI as string);
+const mongodb_uri: string = (process.env.MONGODB_URI as string);
 
 export async function startConnection() {
-
     await connect(mongodb_uri, {
        useNewUrlParser: true,
         useFindAndModify: false
